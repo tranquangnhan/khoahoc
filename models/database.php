@@ -1,7 +1,7 @@
 <?php
 define('HOST_DB','remotemysql.com');
 define('NAME_DB','4qTP2WMqCD');
-define('USER_DB','root');
+define('USER_DB','4qTP2WMqCD');
 define('PASS_DB','qOrEcSPZNX');
 define('ROOT_URL','/khoahoc');
 
