@@ -1,12 +1,22 @@
 <?php
-define('HOST_DB','localhost');
-define('NAME_DB','khoahoc');
+define('HOST_DB','remotemysql.com');
+define('NAME_DB','4qTP2WMqCD');
 define('USER_DB','root');
-define('PASS_DB','');
+define('PASS_DB','qOrEcSPZNX');
 define('ROOT_URL','/khoahoc');
 
 date_default_timezone_set("Asia/Bangkok");
 
+
+// Username: 4qTP2WMqCD
+
+// Database name: 4qTP2WMqCD
+
+// Password: qOrEcSPZNX
+
+// Server: remotemysql.com
+
+// Port: 3306
 
 
 function connect(){
