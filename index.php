@@ -35,7 +35,6 @@
                     $idclass = $_POST['idclass'];
                     $idmon = $_POST['idmon'];
                     $allFile = $_FILES['img'];   
-                    // //upload nhiều ảnh
                     $img = checkUpLoadMany($allFile);
                     if( insertLesson($idkhoayt,$img,$idclass,$idmon)){
                         header("location: ?act=lessonindex");
@@ -57,11 +56,28 @@
                 }
                 require_once "views/layout.php";
                 break;
-            case 'listclass':
+            case 'listclasses':
                 $array = array();
                
                 $array['data'] =  getAllClass();
                 
+                echo json_encode($array);
+                break;
+            case 'listsubjects':
+                $array = array();
+                
+                $array['data'] =  getAllSubject();
+                
+                echo json_encode($array);
+                break;
+            case 'listcourses':
+                $array = array();
+                
+                if(isset($_GET['class'])&&($_GET['class'])){
+                    if(isset($_GET['subject'])&&($_GET['subject'])){
+                        $array['data'] =  getAllCourses($_GET['class'],$_GET['subject']);
+                    }
+                }
                 echo json_encode($array);
                 break;
             default:

@@ -15,6 +15,11 @@
         $sql = "INSERT INTO lesson(idkhoayt,img,idclass,idmon) VALUES (?,?,?,?)";
         return exec1($sql,$idkhoayt,$img,$idclass,$idmon);
     }
+        
+    function getAllSubject(){
+        $sql = "SELECT * FROM subject";
+        return result1(0,$sql);
+    }
     function getAllLesson(){
         $sql = "SELECT * FROM lesson";
         return result1(0,$sql);
@@ -30,5 +35,9 @@
     function delLesson($id){
         $sql = "DELETE FROM lesson WHERE id = ?";
         return exec1($sql,$id);
+    }
+    function getAllCourses($class,$subject){
+        $sql = "SELECT * FROM lesson WHERE idclass= ? AND idmon=?";
+        return result1(0,$sql,$class,$subject);
     }
 ?>

@@ -53,7 +53,7 @@ function result1($fe,$sql){
         $conn = connect(); //connect database
         $stmt = $conn->prepare($sql); // select * from sanpham where id = ?
         $stmt->execute($sqlValue);// thực thi
-        if($fe===0)return $stmt->fetchAll();elseif($fe===1)return $stmt->fetch(PDO::FETCH_ASSOC);// nếu tham số đầu tiên ===0 trả về tất cả sản phẩm, === 1 trả về 1 sản phẩm
+        if($fe===0)return $stmt->fetchAll(PDO::FETCH_ASSOC);elseif($fe===1)return $stmt->fetch(PDO::FETCH_ASSOC);// nếu tham số đầu tiên ===0 trả về tất cả sản phẩm, === 1 trả về 1 sản phẩm
         
     } catch (PDOException $e) {
         echo "Lỗi: " . $e->getMessage();
