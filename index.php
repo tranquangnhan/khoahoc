@@ -57,6 +57,13 @@
                 }
                 require_once "views/layout.php";
                 break;
+            case 'listclass':
+                $array = array();
+               
+                $array['data'] =  getAllClass();
+                
+                echo json_encode($array);
+                break;
             default:
                 # code...
                 break;
