@@ -43,7 +43,7 @@
                 }
                 require_once "views/layout.php";
                 break;
-            case 'lesonindex':
+            case 'lessonindex':
                 $viewFile = "views/lessonindex.php";     
                 $getAllLesson =  getAllLesson();
                 require_once "views/layout.php";
