@@ -9,12 +9,27 @@
                     <input type="text" name="idkhoayt"  class="form-control" placeholder="" >
                 </div>
                 <div class="form-group">
+                    <div class="form-group">
                     <label for="">ID Lớp Học</label>
-                    <input type="text" name="idclass"  class="form-control" placeholder="" >
+                      <select class="form-control" name="idclass" id="">
+                        <?php
+                            foreach ($getAllClass as $row) {
+                                echo ' <option value="'.$row['id'].'">'.$row['name'].'</option>';
+                            }
+                        ?>
+
+                      </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="">ID Môn Học</label>
-                    <input type="text" name="idmon"  class="form-control" placeholder="" >
+                    <select class="form-control" name="idmon" id="">
+                        <?php
+                            foreach ($getAllSubject as $row) {
+                                echo ' <option value="'.$row['id'].'">'.$row['name'].'</option>';
+                            }
+                        ?>
+                      </select>    
                 </div>
                 <div class="form-group">
                     <label for="">Ảnh Đại Diện</label>

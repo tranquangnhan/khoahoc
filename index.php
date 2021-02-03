@@ -40,8 +40,8 @@
                 break;
 
             case 'lessonadd':
-                
-                    
+                $getAllClass= getAllClass();
+                $getAllSubject =getAllSubject();
                 if(isset($_POST['add']) && ($_POST['add'])) {
                     $idkhoayt = $_POST['idkhoayt'];
                     $idclass = $_POST['idclass'];
@@ -68,7 +68,7 @@
                 $viewFile = "views/lessonindex.php";     
                 if(isset($_GET['id'])){
                     if( delLesson($_GET['id'])){
-                        header("location: ?act=lesonindex");
+                        header("location: ?act=lessonindex");
                     }
                 }
                 require_once "views/layout.php";
