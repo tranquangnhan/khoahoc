@@ -1,7 +1,7 @@
 <?php
     /** Config Return Header */
     header("Access-Control-Allow-Origin: *");
-    header('Content-type:application/json;charset=utf-8');
+   
     
     require_once "models/database.php";
     require_once "models/class.php";
@@ -74,7 +74,7 @@
                 require_once "views/layout.php";
                 break;
             case 'listclasses':
-                
+                header('Content-type:application/json;charset=utf-8');
                 $array = array();
                
                 $array['data'] =  getAllClass();
@@ -82,6 +82,7 @@
                 echo json_encode($array);
                 break;
             case 'listsubjects':
+                header('Content-type:application/json;charset=utf-8');
                 $array = array();
                 
                 $array['data'] =  getAllSubject();
@@ -89,6 +90,7 @@
                 echo json_encode($array);
                 break;
             case 'listcourses':
+                header('Content-type:application/json;charset=utf-8');
                 $array = array();
                 
                 if(isset($_GET['class'])&&($_GET['class'])){
