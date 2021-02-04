@@ -40,4 +40,8 @@
         $sql = "SELECT * FROM lesson WHERE idclass= ? AND idmon=?";
         return result1(0,$sql,$class,$subject);
     }
+    function getIdFromIdVideo($id){
+        $sql = "SELECT id FROM lesson WHERE idkhoayt=?";
+        return result1(1,$sql,$id);
+    }
 ?>

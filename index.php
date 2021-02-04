@@ -100,6 +100,25 @@
                 }
                 echo json_encode($array);
                 break;
+            case 'listcourses':
+                header('Content-type:application/json;charset=utf-8');
+                $array = array();
+                
+                if(isset($_GET['class'])&&($_GET['class'])){
+                    if(isset($_GET['subject'])&&($_GET['subject'])){
+                        $array['data'] =  getAllCourses($_GET['class'],$_GET['subject']);
+                    }
+                }
+                echo json_encode($array);
+                break;
+            case 'getidlesson':
+                header('Content-type:application/json;charset=utf-8');
+                $array = array();
+                if(isset($_GET['idvideo'])){
+                    $array['data'] = getIdFromIdVideo($_GET['idvideo']);
+                }
+                echo json_encode($array);
+                break;
             default:
                 # code...
                 break;
