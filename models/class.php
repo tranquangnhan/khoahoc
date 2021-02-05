@@ -44,4 +44,8 @@
         $sql = "SELECT id FROM lesson WHERE idkhoayt=?";
         return result1(1,$sql,$id);
     }
+    function getQuesion($vitri){
+        $sql = "SELECT * FROM questions WHERE vitri = ?";
+        return result1(0,$sql,$vitri);
+    }
 ?>

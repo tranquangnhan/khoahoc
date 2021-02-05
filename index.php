@@ -119,6 +119,16 @@
                 }
                 echo json_encode($array);
                 break;
+            case 'getquestion':
+                header('Content-type:application/json;charset=utf-8');
+                $array = array();
+                if(isset($_GET['idlesson'])&&isset($_GET['vitri'])){
+                    $idLesson = $_GET['idlesson'];
+                    $viTri = $_GET['vitri'];
+                   print_r(getQuesion($idLesson."-".$viTri));
+                }
+                echo json_encode($array);
+                break;
             default:
                 # code...
                 break;
