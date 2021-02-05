@@ -125,7 +125,7 @@
                 if(isset($_GET['idlesson'])&&isset($_GET['vitri'])){
                     $idLesson = $_GET['idlesson'];
                     $viTri = $_GET['vitri'];
-                   print_r(getQuesion($idLesson."-".$viTri));
+                    $array['data'] = getQuesion($idLesson."-".$viTri);
                 }
                 echo json_encode($array);
                 break;
